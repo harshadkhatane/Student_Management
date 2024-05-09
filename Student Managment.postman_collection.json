@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "4d5051ac-eb0e-43d9-9c5a-6c0d4907d601",
+		"name": "Student Managment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33653777"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/students",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"student_name\": \"Harshadkumar Khatane\",\r\n  \"student_email\": \"harshadkhatane66@gmail.com\",\r\n  \"student_age\": 25,\r\n  \"student_parent_id\": 1,\r\n  \"date_of_birth\": \"1998-06-06\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/marks",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"student_id\": 2,\r\n  \"course_id\": 1,\r\n  \"mark\": 85.5,\r\n  \"date_recorded\": \"2024-04-22\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/marks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"marks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/courses",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"course_name\": \"Mathematics\",\r\n  \"course_code\": \"MATH101\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/students",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/students?page=${page}&limit=${limit}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/students?page=${page}&limit=${limit}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "${page}"
+						},
+						{
+							"key": "limit",
+							"value": "${limit}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/students/2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/students/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/students/2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"student_name\": \"Harshad Khatane\",\r\n  \"student_email\": \"harshad.khatane@example.com\",\r\n  \"student_age\" : \"26\",\r\n  \"student_parent_id\" : \"01\",\r\n  \"date_of_birth\": \"1998-06-06\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/students/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/students/${id}",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/students/${id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"students",
+						"${id}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

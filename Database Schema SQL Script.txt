@@ -1,0 +1,28 @@
+-- Create Schema
+CREATE SCHEMA student_schema;
+
+-- Create Students Table
+CREATE TABLE student_schema.Students (
+    student_id SERIAL PRIMARY KEY,
+    student_name VARCHAR(100),
+    student_email VARCHAR(100),
+    student_age INT,
+    student_parent_id INT,
+    date_of_birth DATE
+);
+
+-- Create Courses Table
+CREATE TABLE student_schema.Courses (
+    course_id SERIAL PRIMARY KEY,
+    course_name VARCHAR(100),
+    course_code VARCHAR(20)
+);
+
+-- Create Marks Table
+CREATE TABLE student_schema.Marks (
+    mark_id SERIAL PRIMARY KEY,
+    student_id INT REFERENCES student_schema.Students(student_id),
+    course_id INT REFERENCES student_schema.Courses(course_id),
+    mark DECIMAL(5,2),
+    date_recorded DATE
+);
